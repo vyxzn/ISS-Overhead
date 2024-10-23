@@ -33,7 +33,7 @@ sunset = int(data["results"]["sunset"].split("T")[1].split(":")[0])
 time_now = datetime.now()
 print(time_now)
 def iss_over_me():
-    return MY_LAT + 5 >= iss_latitude >= MY_LAT -5 and MY_LONG + 5 >= iss_latitude >= MY_LONG -5
+    return (MY_LAT + 5 >= iss_latitude >= MY_LAT -5) and (MY_LONG + 5 >= iss_latitude >= MY_LONG -5)
 
 def is_dark():
     return time_now.hour >= sunset or time_now.hour <= sunrise
